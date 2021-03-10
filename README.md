@@ -1,2 +1,2 @@
 # miscellanea
-Respositorio "Saco de Gato" qualquer tipo de exemplos são Bem Vindos...
+Respositorio generalista para pequenos trechos de código.
