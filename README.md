@@ -1,2 +1,3 @@
 # miscellanea
-Respositorio generalista para pequenos trechos de código.
+
+General use repository for code snippets grouped by purpose
