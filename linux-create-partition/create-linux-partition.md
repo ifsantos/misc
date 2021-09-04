@@ -39,4 +39,4 @@ Thanks :P
 
 
 ### References
-[Crucial Blog Post](https://www.crucial.com.au/blog/2009/11/18/how-to-create-a-new-partition-on-a-linux-server/?__cf_chl_jschl_tk__=pmd_XMcoD.s2ylnrRhO4.f8afqRZ89W..Lm8kLfnvXET_J8-1630719931-0-gqNtZGzNAmWjcnBszQhl)
+ - [Crucial Blog Post](https://www.crucial.com.au/blog/2009/11/18/how-to-create-a-new-partition-on-a-linux-server/?__cf_chl_jschl_tk__=pmd_XMcoD.s2ylnrRhO4.f8afqRZ89W..Lm8kLfnvXET_J8-1630719931-0-gqNtZGzNAmWjcnBszQhl)
