@@ -1,4 +1,4 @@
 
-# CPU clock monitoring as lab for WMI (Windows Management Instrumentation)
+# CPU clock monitoring as case for WMI lab 
 
-Discoverin windows features
+Exploring **Windows Management Instrumentation** features
