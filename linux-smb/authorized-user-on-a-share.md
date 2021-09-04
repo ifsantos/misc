@@ -28,7 +28,7 @@
 
         sudo smbcontrol all reload-config
 
-Enjoy your authoryzed shared folder! 
+Enjoy your authorized shared folder! 
 
 Thanks :)
 
