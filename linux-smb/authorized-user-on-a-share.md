@@ -26,7 +26,7 @@
 
 6. After the changes, reload samba configuration:
 
-        smbcontrol all reload-config
+        sudo smbcontrol all reload-config
 
 Enjoy your authoryzed shared folder! 
 
