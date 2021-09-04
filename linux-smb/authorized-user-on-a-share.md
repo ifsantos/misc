@@ -3,7 +3,9 @@
 
  1. Make sure that every user can access the common media folder on the unix side (without samba); alternatively, you can set force user in *smb.conf*
  2. Make sure each user has a samba password set. You can set it with:  
+        
         sudo smbpasswd -a your_user
+        
  3. Look at */etc/samba/smb.conf*: check if the line *security = your_user* is set in the *[GLOBAL]* section
  4. Set your shares in */etc/samba/smb.conf*, see example for single user share:
 
