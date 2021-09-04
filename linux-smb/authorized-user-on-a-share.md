@@ -21,13 +21,13 @@
 5. Restart the samba server after the changes with:
 
         sudo service smbd restart
-        
-or
-        
+        # or     
         sudo systemctl restart smbd.service
 
-6. After the changes
+6. After the changes, reload the configs:
 
         smbcontrol all reload-config
 
-Enjoy your authoryzed shared folder!
+Enjoy your authoryzed shared folder! 
+
+Thanks :)
