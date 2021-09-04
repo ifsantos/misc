@@ -31,3 +31,6 @@
 Enjoy your authoryzed shared folder! 
 
 Thanks :)
+
+### References
+ - [Ask Ubuntu](https://askubuntu.com/questions/208013/how-can-i-set-up-samba-shares-to-only-be-accessed-by-certain-users)
