@@ -22,7 +22,7 @@ Those studies above were important do build the knowlege base for the last imple
 - <https://stackoverflow.com/questions/61802420/unable-to-get-current-cpu-frequency-in-powershell-or-python>
 - <https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-7.1>
 
-2. Pithon
+2. Python
 - <https://www.devdungeon.com/content/dialog-boxes-python>
 - <https://www.geeksforgeeks.org/find-average-list-python/>
 - <https://www.cac.cornell.edu/wiki/index.php?title=Performance_Data_Helper_in_Python_with_win32pdh#GetCounterInfo>
