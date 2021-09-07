@@ -1,5 +1,5 @@
 
-# miscellanea
+# misc
 
 General use repository for code snippets and its descritpions grouped by purpose
 
