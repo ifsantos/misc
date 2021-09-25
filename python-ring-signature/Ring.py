@@ -5,7 +5,7 @@ class Ring:
     def __init__(self, k, L: int = 1024) -> None:
         self.k = k
         self.l = L
-        self.n = len(k)
+        self.n = len(list(k))
         self.q = 1 << (L - 1)
 
     def sign(self, m: str, z: int):
@@ -14,7 +14,7 @@ class Ring:
         s = [None] * self.n
         u = random.randint(0, self.q)
         c = v = self._E(u)
-        for i in range(z + 1, self.n) + range(z):
+        for i in [*range(z + 1, self.n), *range(z)]:
             s[i] = random.randint(0, self.q)
             e = self._g(s[i], self.k[i].e, self.k[i].n)
             v = self._E(v ^ e)
@@ -35,10 +35,15 @@ class Ring:
         return r == X[0]
 
     def _permut(self, m):
-        self.p = int(hashlib.sha1("%s" % m).hexdigest(), 16)
+        print(m)
+        sah1 = hashlib.sha1( m.encode('utf-8') )
+        hexdigest_ = sah1.hexdigest()
+        print(hexdigest_)
+
+        self.p = int(hexdigest_, 16)
 
     def _E(self, x):
-        msg = "%s%s" % (x, self.p)
+        msg = "%s%s".format(x, self.p).encode('utf-8')
         return int(hashlib.sha1(msg).hexdigest(), 16)
 
     def _g(self, x, e, n):
