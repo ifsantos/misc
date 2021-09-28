@@ -1,12 +1,15 @@
-import os, hashlib, random, Crypto.PublicKey.RSA
+import os, hashlib, random, Crypto.PublicKey.RSA, functools
+from icecream import ic
 
 class Ring:
     """RSA implementation."""
     def __init__(self, k, L: int = 1024) -> None:
         self.k = k
+       
         self.l = L
-        self.n = len(list(k))
+        self.n = len(k)
         self.q = 1 << (L - 1)
+        ic(self.n)
 
     def sign(self, m: str, z: int):
         """Sign a message."""
@@ -16,7 +19,9 @@ class Ring:
         c = v = self._E(u)
         for i in [*range(z + 1, self.n), *range(z)]:
             s[i] = random.randint(0, self.q)
-            e = self._g(s[i], self.k[i].e, self.k[i].n)
+            k_i_e = self.k[i].e
+            k_i_n = self.k[i].n
+            e = self._g(s[i], k_i_e, k_i_n)
             v = self._E(v ^ e)
             if (i + 1) % self.n == 0:
                 c = v
@@ -29,9 +34,12 @@ class Ring:
         def _f(i):
             return self._g(X[i + 1], self.k[i].e, self.k[i].n)
         y = map(_f, range(len(X) - 1))
+        y_list = list(y)
         def _g(x, i):
-            return self._E(x ^ y[i])
-        r = reduce(_g, range(self.n), X[0])
+            return self._E(x ^ y_list[i])
+        r = functools.reduce(_g, range(self.n), X[0])
+        ic(r)
+        ic(X)
         return r == X[0]
 
     def _permut(self, m):
@@ -64,9 +72,12 @@ def _rn(_):
     return Crypto.PublicKey.RSA.generate(1024, os.urandom)
 
 key = map(_rn, range(size))
-r = Ring(key)
+key_list =  list(key)
+r = Ring(key_list)
 for i in range(size):
     s1 = r.sign(msg1, i)
     s2 = r.sign(msg2, i)
-    assert r.verify(msg1, s1) and r.verify(msg2, s2) and not r.verify(msg1, s2)
+    ic(s1)
+    ic(s2)
+    assert ic(r.verify(msg1, s1)) and ic(r.verify(msg2, s2)) and not ic(r.verify(msg1, s2))
 
