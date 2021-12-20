@@ -70,26 +70,26 @@ public class QualifyBTree {
 
         BTree t = initBTree();
 
-        Map<String, BTree> nodeTree = new HashMap<String,BTree>();
+        BTree aT = null;
+        BTree bT = null;
         
         boolean found = false;
         while (!found){
-
-            if (isHere(a,t.L)){
-                nodeTree.put(a, t.L);
-            }else if (isHere(a,t.R)){
-                nodeTree.put(a, t.R);
+            if (isHere(a, t.L)){
+                aT = t.L;
+            } else {
+                aT = t.R;
             }
-            if (isHere(b,t.L)){
-                nodeTree.put(b, t.L);
-            }else if (isHere(b,t.R)){
-                nodeTree.put(b, t.R);
+            if (isHere(b, t.L)){
+                bT = t.L;
+            } else {
+                bT = t.R;
             }
 
-            if (nodeTree.get(b).equals(nodeTree.get(a))){
-                t = nodeTree.get(b);
+            if (aT.equals(bT)){
+                t = aT;
             }else{
-                System.out.printf("Se %s e %s encontraram em %s", a, b, t.node);
+                System.out.printf("Se %s e %s encontraram em %s\n", a, b, t.node);
                 found = true;
             }
         }
