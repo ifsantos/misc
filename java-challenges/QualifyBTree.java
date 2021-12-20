@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
+
 import java.util.Scanner;
 
 public class QualifyBTree {
@@ -8,31 +7,26 @@ public class QualifyBTree {
         String node;
         BTree L = null;
         BTree R = null;
-        /*
-        public boolean equals(BTree t){
-            return this.node.equals(t.node);
-        }
-        */
     }
     static BTree initBTree(){
-        BTree t = new BTree("final");
+        BTree t = new BTree("finais");
         
-        t.L = new BTree("semi-final");
-        t.R = new BTree("semi-final");
+        t.L = new BTree("semi-finais");
+        t.R = new BTree("semi-finai");
         
-        t.L.L = new BTree("quartas de final");
-        t.L.R = new BTree("quartas de final");
-        t.R.L = new BTree("quartas de final");
-        t.R.R = new BTree("quartas de final");
+        t.L.L = new BTree("quartas de finais");
+        t.L.R = new BTree("quartas de finais");
+        t.R.L = new BTree("quartas de finais");
+        t.R.R = new BTree("quartas de finais");
 
-        t.L.L.L = new BTree("oitavas de final");
-        t.L.L.R = new BTree("oitavas de final");
-        t.L.R.L = new BTree("oitavas de final");
-        t.L.R.R = new BTree("oitavas de final");
-        t.R.L.L = new BTree("oitavas de final");
-        t.R.L.R = new BTree("oitavas de final");
-        t.R.R.L = new BTree("oitavas de final");
-        t.R.R.R = new BTree("oitavas de final");
+        t.L.L.L = new BTree("oitavas de finais");
+        t.L.L.R = new BTree("oitavas de finais");
+        t.L.R.L = new BTree("oitavas de finais");
+        t.L.R.R = new BTree("oitavas de finais");
+        t.R.L.L = new BTree("oitavas de finais");
+        t.R.L.R = new BTree("oitavas de finais");
+        t.R.R.L = new BTree("oitavas de finais");
+        t.R.R.R = new BTree("oitavas de finais");
 
         t.L.L.L.L = new BTree("1");
         t.L.L.L.R = new BTree("2");
@@ -75,21 +69,16 @@ public class QualifyBTree {
         
         boolean found = false;
         while (!found){
-            if (isHere(a, t.L)){
+            aT = t.R;
+            bT = t.R;
+            if (isHere(a, t.L))
                 aT = t.L;
-            } else {
-                aT = t.R;
-            }
-            if (isHere(b, t.L)){
+            if (isHere(b, t.L))
                 bT = t.L;
-            } else {
-                bT = t.R;
-            }
-
             if (aT.equals(bT)){
                 t = aT;
             }else{
-                System.out.printf("Se %s e %s encontraram em %s\n", a, b, t.node);
+                System.out.printf("Os times %s e %s encontram nas %s\n", a, b, t.node);
                 found = true;
             }
         }
