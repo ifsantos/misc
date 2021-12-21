@@ -27,7 +27,7 @@ public class QualifyBTree {
         t.R.L.R = new BTree("oitavas de finais");
         t.R.R.L = new BTree("oitavas de finais");
         t.R.R.R = new BTree("oitavas de finais");
-
+        /*
         t.L.L.L.L = new BTree("1");
         t.L.L.L.R = new BTree("2");
         t.L.L.R.L = new BTree("3");
@@ -44,7 +44,39 @@ public class QualifyBTree {
         t.R.R.L.R = new BTree("14");
         t.R.R.R.L = new BTree("15");
         t.R.R.R.R = new BTree("16");
+        */
+        fillEndNode(t);
+        setLastNode(1,t);
+        printEndNodes(t);
+
         return t;
+    }
+    static void fillEndNode(BTree root){
+        if (root.L == null && root.R == null){
+            root.L = new BTree("");
+            root.R = new BTree("");
+        }else{
+            fillEndNode(root.R);
+            fillEndNode(root.L);
+        }
+    }
+
+    static int setLastNode(int name, BTree root){
+        if (root.node.equals("")){
+            root.node = Integer.toString(name);
+            return name+1;
+        }else{
+            return setLastNode(setLastNode(name, root.L), root.R);    
+        }
+    }
+
+    static void printEndNodes(BTree root){
+        if (root.L == null && root.R == null){
+            System.out.println(root.node+", ");;
+        }else {
+            printEndNodes(root.L);
+            printEndNodes(root.R);
+        }
     }
 
     static boolean isHere(String node, BTree root){
