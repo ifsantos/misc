@@ -72,7 +72,7 @@ public class QualifyBTree {
 
     static void printEndNodes(BTree root){
         if (root.L == null && root.R == null){
-            System.out.println(root.node+", ");;
+            System.out.printf("%s ",root.node);
         }else {
             printEndNodes(root.L);
             printEndNodes(root.R);
@@ -110,7 +110,7 @@ public class QualifyBTree {
             if (aT.equals(bT)){
                 t = aT;
             }else{
-                System.out.printf("Os times %s e %s encontram nas %s\n", a, b, t.node);
+                System.out.printf("\nOs times %s e %s encontram nas %s\n", a, b, t.node);
                 found = true;
             }
         }
