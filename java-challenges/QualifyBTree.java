@@ -53,8 +53,8 @@ public class QualifyBTree {
     }
     static void fillEndNode(BTree root){
         if (root.L == null && root.R == null){
-            root.L = new BTree("");
-            root.R = new BTree("");
+            root.L = new BTree(null);
+            root.R = new BTree(null);
         }else{
             fillEndNode(root.R);
             fillEndNode(root.L);
@@ -62,7 +62,7 @@ public class QualifyBTree {
     }
 
     static int setLastNode(int name, BTree root){
-        if (root.node.equals("")){
+        if (root.node == null){
             root.node = Integer.toString(name);
             return name+1;
         }else{
